@@ -63,49 +63,260 @@ h2 {
 }
 
 /* Center align product section */
-#products {
-  text-align: center;
-}
-
-/* Style product container */
 .product-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Space between products */
 }
 
-/* Style individual product */
 .product {
-  width: 200px; /* Set fixed width */
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: #fff;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  background: #f9f9f9;
 }
 
-/* Resize product images */
 .product img {
   width: 100%;  /* Makes images responsive */
   max-width: 180px; /* Limits max size */
+  border-radius: 10px;
   height: auto;
   display: block;
   margin: 0 auto; /* Centers image inside the product box */
 }
 
-/* Style buttons */
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
+.qty-buttons button, .add-cart-btn {
   padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
   margin: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.qty-buttons button {
+  background-color: #ddd;
 }
+
+.add-cart-btn {
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+}
+
+.add-cart-btn:hover{
+  background-color:#218838; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.add-cart-btn:active{
+  transform: scale(0.95);
+}
+
+#cart {
+  margin: 20px;
+  text-align: center;
+}
+#products {
+  text-align: center;
+}
+
+
+
+/* Navbar */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensures padding doesn't mess with width */
+  overflow: hidden; /* Prevents extra content from overflowing */
+}
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 15px;
+  color: white;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px; /* Space between menu items */
+  list-style: none;
+}
+
+.nav-menu li {
+  display: inline;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adjust spacing between icons */
+  padding-right: 30px; /* Increased padding to prevent cutoff */
+}
+
+.search-bar {
+  padding: 2px;
+  border: none;
+  border-radius: 3px;
+}
+
+.nav-right a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 5px;
+}
+
+
+.nav-right i {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-right a i {
+  font-size: 22px;  /* Adjust icon size */
+  color: white;  /* Ensure icons are white */
+  padding: 1px;  /* Space around icons */
+}
+
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive navbar*/
+.sidebar-toggle {
+  display: none;
+}
+
+/* Show sidebar toggle button only on small screens */
+@media (max-width: 992px) {
+  .sidebar-toggle {
+      display: block;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+  }
+
+  .nav-menu {
+      display: none; /* Hide the navbar menu on small screens */
+  }
+
+  .sidebar {
+      display: block; /* Sidebar should work normally on small screens */
+  }
+}
+
+/*carousel image*/
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-indicators li {
+  background-color: #000; /* Indicator color */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000; /* Control icon color */
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+      height: 400px; /* Adjust height for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
 

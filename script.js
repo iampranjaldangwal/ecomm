@@ -1,3 +1,26 @@
+// Function to add navbar to pages
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+
+        // Attach event listeners after navbar is loaded
+        document.getElementById("open-menu").addEventListener("click", openSidebar);
+        document.getElementById("close-menu").addEventListener("click", closeSidebar);
+      })
+      .catch(error => console.error("Error loading navbar:", error));
+});
+
+function openSidebar() {
+    document.getElementById("sidebar").style.width = "250px";
+}
+
+function closeSidebar() {
+    document.getElementById("sidebar").style.width = "0";
+}
+
+
 // Cart object to store product quantities
 let cart = {};
 
@@ -48,6 +71,10 @@ function displayCartItems() {
     }
 }
 
+//men carousel 
+$('.carousel').carousel({
+    interval: 5000, // Slide transition interval in milliseconds
+});
 
 
 

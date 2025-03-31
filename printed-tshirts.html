@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Printed T-Shirts - Trendy Wear</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Printed T-Shirts</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="men.html">Men</a></li>
-                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-            </ul>
-        </nav>
+        <div id="navbar-container"></div>
     </header>
 
     <section id="products">
@@ -24,41 +18,65 @@
             <div class="product" data-id="1" data-name="Graphic Print Tee" data-price="700">
                 <img src="images/Tshirt1.jpg" alt="Graphic Print Tee">
                 <p>Graphic Print Tee - ₹700</p>
-                <button onclick="addToCart(1, 'Graphic Print Tee', 700)">+</button>
-                <span id="qty-1">0</span>
-                <button onclick="removeFromCart(1)">-</button>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(1)">-</button>
+                    <span id="qty-1">0</span>
+                    <button onclick="addToCart(1, 'Graphic Print Tee', 700)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(1, 'Graphic Print Tee', 700)">Add to Cart</button>
             </div>
             <div class="product" data-id="2" data-name="Floral Printed Tee" data-price="750">
                 <img src="images/Tshirt2.jpg" alt="Floral Printed Tee">
                 <p>Floral Printed Tee - ₹750</p>
-                <button onclick="addToCart(2, 'Floral Printed Tee', 750)">+</button>
-                <span id="qty-2">0</span>
-                <button onclick="removeFromCart(2)">-</button>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(2)">-</button>
+                    <span id="qty-2">0</span>
+                    <button onclick="addToCart(2, 'Floral Printed Tee', 750)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(2, 'Floral Printed Tee', 750)">Add to Cart</button>
             </div>
             <div class="product" data-id="3" data-name="Cartoon Printed Tee" data-price="800">
-                <img src="images/printed3.jpg" alt="Cartoon Printed Tee">
+                <img src="images/printedTee/printed3.jpg" alt="Cartoon Printed Tee">
                 <p>Cartoon Printed Tee - ₹800</p>
-                <button onclick="addToCart(3, 'Cartoon Printed Tee', 800)">+</button>
-                <span id="qty-3">0</span>
-                <button onclick="removeFromCart(3)">-</button>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(3)">-</button>
+                    <span id="qty-3">0</span>
+                    <button onclick="addToCart(3, 'Cartoon Printed Tee', 800)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(3, 'Cartoon Printed Tee', 800)">Add to Cart</button>
             </div>
-            <div class="product" data-id="4" data-name="Typography Tee" data-price="850">
-                <img src="images/printed4.jpg" alt="Typography Tee">
-                <p>Typography Tee - ₹850</p>
-                <button onclick="addToCart(4, 'Typography Tee', 850)">+</button>
-                <span id="qty-4">0</span>
-                <button onclick="removeFromCart(4)">-</button>
+            <div class="product" data-id="4" data-name="Floral Printed Tee" data-price="750">
+                <img src="images/printedTee/printed4.jpg" alt="Floral Printed Tee">
+                <p>Floral Printed Tee - ₹750</p>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(2)">-</button>
+                    <span id="qty-2">0</span>
+                    <button onclick="addToCart(2, 'Floral Printed Tee', 750)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(2, 'Floral Printed Tee', 750)">Add to Cart</button>
             </div>
-            <div class="product" data-id="5" data-name="Street Art Tee" data-price="900">
-                <img src="images/printed5.jpg" alt="Street Art Tee">
-                <p>Street Art Tee - ₹900</p>
-                <button onclick="addToCart(5, 'Street Art Tee', 900)">+</button>
-                <span id="qty-5">0</span>
-                <button onclick="removeFromCart(5)">-</button>
+
+            <div class="product" data-id="5" data-name="Floral Printed Tee" data-price="750">
+                <img src="images/printedTee/printed5.jpg" alt="Floral Printed Tee">
+                <p>Floral Printed Tee - ₹750</p>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(2)">-</button>
+                    <span id="qty-2">0</span>
+                    <button onclick="addToCart(2, 'Floral Printed Tee', 750)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(2, 'Floral Printed Tee', 750)">Add to Cart</button>
             </div>
         </div>
+    </section>
+
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: ₹<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
     </section>
 
     <script src="script.js"></script>
 </body>
 </html>
+

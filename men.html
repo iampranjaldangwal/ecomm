@@ -3,29 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Collection - Trendy Wear</title>
+    <title>Men's Collection</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>Men's Collection</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-            </ul>
-        </nav>
+        <div id="navbar-container"></div>
     </header>
 
-    <section class="category-grid">
-        <a href="printed-tshirts.html" class="category-box">
-            <img src="images/Tshirt1.jpg" alt="Printed T-Shirts">
-            <h3>Printed T-Shirts</h3>
-        </a>
-        <a href="plain-tshirts.html" class="category-box">
-            <img src="images/Menscollection.jpg" alt="Plain T-Shirts">
-            <h3>Plain T-Shirts</h3>
-        </a>
+    <section>
+        <h2>Plain T-Shirts</h2>
+        <div id="plainTeeCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="plain-tshirts.html">
+                        <img src="images/plainTee/plainTee1.jpg" class="d-block w-100" alt="Plain Tee 1">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="plain-tshirts.html">
+                        <img src="images/plainTee/plainTee2.jpg" class="d-block w-100" alt="Plain Tee 2">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="plain-tshirts.html">
+                        <img src="images/plainTee/plainTee3.jpg" class="d-block w-100" alt="Plain Tee 3">
+                    </a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#plainTeeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#plainTeeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
     </section>
+
+    <section>
+        <h2>Printed T-Shirts</h2>
+        <div id="printedTeeCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="printed-tshirts.html">
+                        <img src="images/printedTee/printedCarousel1.png" class="d-block w-100" alt="Printed Tee 1">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="printed-tshirts.html">
+                        <img src="images/printedTee/printedCarousel2.jpg" class="d-block w-100" alt="Printed Tee 2">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="printed-tshirts.html">
+                        <img src="images/printedTee/printed3.jpg" class="d-block w-100" alt="Printed Tee 3">
+                    </a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#printedTeeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#printedTeeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
