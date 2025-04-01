@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dresses - Trendy Wear</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="navbar-container"></div>
+    </header>
+
+    <section id="products">
+        <h2>Women's Dresses</h2>
+        <div class="product-container">
+            <div class="product" data-id="1" data-name="Elegant Evening Dress" data-price="1500">
+                <img src="images/dresses/dress1.jpg" alt="Elegant Evening Dress">
+                <p>Elegant Evening Dress - ₹1500</p>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(1)">-</button>
+                    <span id="qty-1">0</span>
+                    <button onclick="addToCart(1, 'Elegant Evening Dress', 1500)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(1, 'Elegant Evening Dress', 1500)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2" data-name="Floral Summer Dress" data-price="1200">
+                <img src="images/dresses/dress2.jpg" alt="Floral Summer Dress">
+                <p>Floral Summer Dress - ₹1200</p>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(2)">-</button>
+                    <span id="qty-2">0</span>
+                    <button onclick="addToCart(2, 'Floral Summer Dress', 1200)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(2, 'Floral Summer Dress', 1200)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3" data-name="Casual Midi Dress" data-price="1300">
+                <img src="images/dresses/dress3.jpg" alt="Casual Midi Dress">
+                <p>Casual Midi Dress - ₹1300</p>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(3)">-</button>
+                    <span id="qty-3">0</span>
+                    <button onclick="addToCart(3, 'Casual Midi Dress', 1300)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(3, 'Casual Midi Dress', 1300)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="4" data-name="Casual Midi Dress" data-price="1400">
+                <img src="images/dresses/dress4.jpg" alt="Casual Midi Dress">
+                <p>Casual Midi Dress - ₹1400</p>
+                <div class="qty-buttons">
+                    <button onclick="removeFromCart(4)">-</button>
+                    <span id="qty-4">0</span>
+                    <button onclick="addToCart(4, 'Casual Midi Dress', 1400)">+</button>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart(4, 'Casual Midi Dress', 1400)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" data-id="5" data-name="Casual Midi Dress" data-price="1300">
+            <img src="images/dresses/dress5.jpg" alt="Casual Midi Dress">
+            <p>Casual Midi Dress - ₹1300</p>
+            <div class="qty-buttons">
+                <button onclick="removeFromCart(5)">-</button>
+                <span id="qty-5">0</span>
+                <button onclick="addToCart(5, 'Casual Midi Dress', 1300)">+</button>
+            </div>
+            <button class="add-cart-btn" onclick="addToCart(5, 'Casual Midi Dress', 1300)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: ₹<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

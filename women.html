@@ -3,20 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Collection - Trendy Wear</title>
+    <title>Women's Collection</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
         <div id="navbar-container"></div>
     </header>
 
-    <section class="category-grid">
-        <a href="suits.html" class="category-box">
-            <img src="images/suit-category.jpg" alt="Suits">
-            <h3>Designer Suits</h3>
-        </a>
+    <!-- Kurtis Carousel -->
+    <section>
+        <h2>Kurtis</h2>
+        <div id="kurtiCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="kurtis.html">
+                        <img src="images/kurtis/kurti1.jpg" class="d-block w-100" alt="Kurti 1">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="kurtis.html">
+                        <img src="images/kurtis/kurti2.jpg" class="d-block w-100" alt="Kurti 2">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="kurtis.html">
+                        <img src="images/kurtis/kurti3.jpg" class="d-block w-100" alt="Kurti 3">
+                    </a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#kurtiCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#kurtiCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
     </section>
+
+    <!-- Dresses Carousel -->
+    <section>
+        <h2>Dresses</h2>
+        <div id="dressCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="dresses.html">
+                        <img src="images/dresses/dress1.jpg" class="d-block w-100" alt="Dress 1">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="dresses.html">
+                        <img src="images/dresses/dress2.jpg" class="d-block w-100" alt="Dress 2">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="dresses.html">
+                        <img src="images/dresses/dress3.jpg" class="d-block w-100" alt="Dress 3">
+                    </a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#dressCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#dressCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
+
