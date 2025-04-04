@@ -3,28 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendy Wear - Home</title>
+    <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <header>
         <div id="navbar-container"></div>
     </header>
 
-    <section class="home-category">
-        <h2>Shop by Category</h2>
-        <div class="category-grid">
-            <a href="men.html" class="category-box">
-                <img src="images/Menscollection.jpg" alt="Men's Collection">
-                <h3>Men's Collection</h3>
-            </a>
-            <a href="women.html" class="category-box">
-                <img src="images/lavenderSkirt.jpg" alt="Women's Collection">
-                <h3>Women's Collection</h3>
-            </a>
+    <section class="hero-banner">
+    </section>
+    
+
+    <section id="product-carousel">
+        <h2></h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slides start -->
+                <div class="swiper-slide">
+                    <a href="plain-tshirts.html">
+                        <img src="images/plainTee/plainTee3.jpg" alt="Plain T-Shirts">
+                        <p>Men's Plain T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="printed-tshirts.html">
+                        <img src="images/printedTee/printed5.jpg" alt="Printed T-Shirts">
+                        <p>Men's Printed T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="plain-tshirts.html">
+                        <img src="images/plainTee/plainTee2.jpg" alt="Plain T-Shirts">
+                        <p>Men's Plain T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="printed-tshirts.html">
+                        <img src="images/printedTee/printed3.jpg" alt="Printed T-Shirts">
+                        <p>Men's Printed T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="plain-tshirts.html">
+                        <img src="images/plainTee/plainTee1.jpg" alt="Plain T-Shirts">
+                        <p>Men's Plain T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="printed-tshirts.html">
+                        <img src="images/printedTee/printed4.jpg" alt="Printed T-Shirts">
+                        <p>Men's Printed T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="plain-tshirts.html">
+                        <img src="images/plainTee/plain4.jpg" alt="Plain T-Shirts">
+                        <p>Men's Plain T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="printed-tshirts.html">
+                        <img src="images/printedTee/printed2.jpg" alt="Printed T-Shirts">
+                        <p>Men's Printed T-Shirts</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="kurtis.html">
+                        <img src="images/kurtis/kurti1.jpg" alt="Women's Kurtis">
+                        <p>Women's Kurtis</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="dresses.html">
+                        <img src="images/dresses/dress1.jpg" alt="Women's Dresses">
+                        <p>Women's Dresses</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="kurtis.html">
+                        <img src="images/kurtis/kurti2.jpg" alt="Women's Kurtis">
+                        <p>Women's Kurtis</p>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="dresses.html">
+                        <img src="images/dresses/dress2.jpg" alt="Women's Dresses">
+                        <p>Women's Dresses</p>
+                    </a>
+                </div>
+                <!-- Slides end -->
+            </div>
+    
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+    
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
     </section>
+    
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper', {
+            slidesPerView: 4,  // Show 4 products at a time
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                1024: { slidesPerView: 4 },
+                768: { slidesPerView: 2 },
+                480: { slidesPerView: 1 }
+            }
+        });
+    </script>
+    <div id="footer-container"></div>
     <script src="script.js"></script>
+    <script src="index.js"></script>
+    <script src="footer.js"></script>
+    <script src="navbar.js"></script>
+
 </body>
 </html>
