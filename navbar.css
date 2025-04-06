@@ -269,3 +269,223 @@ body {
   
     
   }
+
+
+
+  /*modal*/
+  .btn-primary {
+    background: linear-gradient(to right, #000, #333);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(to right, #333, #000);
+    transform: scale(1.02);
+  }
+
+  .modal-content {
+    background: #ffffff;
+  }
+  
+  .modal-image-panel {
+    flex: 0 0 40%;
+    background-color: #f8f8f8;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    overflow: hidden;
+  }
+
+  .modal-image-panel, .modal-form-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-image-panel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: row;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border: none;
+    transition: all 0.3s ease;
+    animation: slideUpFade 0.4s ease-out;
+    height: auto;
+  }
+
+  
+@keyframes slideUpFade {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h4{
+  text-align: center;
+}
+
+.text-muted a {
+  color: #555;
+  text-decoration: underline;
+}
+
+.text-muted a:hover {
+  color: #000;
+}
+
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.benefit-icon:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.login-benefits p {
+  font-size: 13px;
+  color: #444;
+  font-weight: 500;
+}
+
+#extra-info-icons {
+  display: none;
+}
+
+  
+  
+  .modal-image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+  }
+  
+  .modal-form-panel {
+    flex: 0 0 60%;
+    background-color: #fff;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+  }
+
+  .modal-form-panel label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .modal-form-panel .form-group {
+    width: 100%;
+  }
+
+  .modal-form-panel .form-control {
+    width: 100% !important;
+    max-width: 100%;
+    flex: 1;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease;
+  }
+
+  .modal-form-panel .form-control:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    outline: none;
+  }
+  
+  .modal-dialog {
+    max-width: 800px;
+  }
+
+  .modal-img {
+    width: 100%;
+    max-height: 435px;
+    object-fit: contain;
+  }
+
+  .btn-outline-dark img,
+.btn-outline-secondary i {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  .modal-content {
+    flex-direction: column !important;
+    border-radius: 16px;
+  }
+
+  .modal-image-panel {
+    border-radius: 16px 16px 0 0;
+    height: 180px;
+  }
+
+  .modal-form-panel {
+    border-radius: 0 0 16px 16px;
+    padding: 25px;
+    height: 50vh;
+  }
+}
+
+  @media (max-width: 768px) {
+    .modal-dialog {
+      max-width: 90%;
+    }
+  
+    .modal-content {
+      flex-direction: column !important;
+    }
+  
+    .modal-image-panel {
+      border-radius: 16px 16px 0 0;
+      height: 180px;
+    }
+  
+    .modal-img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .modal-form-panel {
+      border-radius: 0 0 16px 16px;
+      padding: 1rem;
+    }
+  }
+  
