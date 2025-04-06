@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - Trendy Wear</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="cart.css" />
 </head>
 <body>
-    <header>
-        <h1>Shopping Cart</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div id="navbar-container"></div>
+  </header>
 
-    <section id="cart">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: ₹<span id="cart-total">0</span></p>
-    </section>
+  <main class="cart-main">
+    <h2>Your Shopping Cart</h2>
+    <div id="cart-items" class="cart-items-container"></div>
+    <div class="cart-summary">
+      <p>Total: ₹<span id="cart-total">0</span></p>
+      <button onclick="checkout()">Checkout</button>
+      <button onclick="clearCart()">Clear Cart</button>
+    </div>
+  </main>
 
-    <script src="cart.js"></script>
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>
+
+
