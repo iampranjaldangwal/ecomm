@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 //form
+               
                     const requestOtpBtn = document.getElementById('requestOtpBtn');
                     const verifyOtpBtn = document.getElementById('verifyOtpBtn');
                   
@@ -99,11 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       });
                     }
                   
-                    // Modal show
-                    $('[data-toggle="modal"]').on('click', function () {
-                      const target = $(this).data("target");
-                      $(target).modal("show");
-                    });
+                   
                  
                   
             }, 100);
