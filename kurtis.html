@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -17,70 +17,113 @@
     <section id="products">
         <h2>Women's Kurtis</h2>
         <div class="product-container">
-            <div class="product" data-id="1" data-name="Floral Kurti" data-price="1200">
-                <img src="images/kurtis/kurti1.jpg" alt="Floral Kurti">
-                <p>Floral Kurti - ₹1200</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(1)">-</button>
-                    <span id="qty-1">0</span>
-                    <button onclick="addToCart(1, 'Floral Kurti', 1200)">+</button>
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/kurtis/kurti1.jpg" alt="Floral Kurti">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(1, 'Floral Kurti', 1200)">Add to Cart</button>
+                <p class="product-title">Floral Kurti</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹1,200</span>
+                    <span class="original-price">₹1,500</span>
+                    <span class="discount-tag">20% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #f5e1e1;"></span>
+                    <span class="color-swatch" style="background-color: #ffe5b4;"></span>
+                </div>
             </div>
-            <div class="product" data-id="2" data-name="Embroidered Kurti" data-price="1400">
-                <img src="images/kurtis/kurti2.jpg" alt="Embroidered Kurti">
-                <p>Embroidered Kurti - ₹1400</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(2)">-</button>
-                    <span id="qty-2">0</span>
-                    <button onclick="addToCart(2, 'Embroidered Kurti', 1400)">+</button>
+
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/kurtis/kurti2.jpg" alt="Embroidered Kurti">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(2, 'Embroidered Kurti', 1400)">Add to Cart</button>
+                <p class="product-title">Embroidered Kurti</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹1,400</span>
+                    <span class="original-price">₹1,800</span>
+                    <span class="discount-tag">22% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #c1a57b;"></span>
+                    <span class="color-swatch" style="background-color: #e8d1ba;"></span>
+                </div>
             </div>
-            <div class="product" data-id="3" data-name="Cotton Kurti" data-price="1000">
-                <img src="images/kurtis/kurti3.jpg" alt="Cotton Kurti">
-                <p>Cotton Kurti - ₹1000</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(3)">-</button>
-                    <span id="qty-3">0</span>
-                    <button onclick="addToCart(3, 'Cotton Kurti', 1000)">+</button>
+
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/kurtis/kurti3.jpg" alt="Cotton Kurti">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(3, 'Cotton Kurti', 1000)">Add to Cart</button>
+                <p class="product-title">Cotton Kurti</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹1,000</span>
+                    <span class="original-price">₹1,300</span>
+                    <span class="discount-tag">23% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #e2e2e2;"></span>
+                    <span class="color-swatch" style="background-color: #ddd6ce;"></span>
+                </div>
             </div>
-            <div class="product" data-id="4" data-name="Cotton Kurti" data-price="1000">
-                <img src="images/kurtis/kurti4.jpg" alt="Cotton Kurti">
-                <p>Cotton Kurti - ₹1000</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(4)">-</button>
-                    <span id="qty-4">0</span>
-                    <button onclick="addToCart(4, 'Cotton Kurti', 1000)">+</button>
+
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/kurtis/kurti4.jpg" alt="Cotton Kurti">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(4, 'Cotton Kurti', 1000)">Add to Cart</button>
+                <p class="product-title">Cotton Kurti</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹1,000</span>
+                    <span class="original-price">₹1,300</span>
+                    <span class="discount-tag">23% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #ccc;"></span>
+                    <span class="color-swatch" style="background-color: #f2e1dc;"></span>
+                </div>
             </div>
-            <div class="product" data-id="5" data-name="Cotton Kurti" data-price="1000">
-                <img src="images/kurtis/kurti5.jpg" alt="Cotton Kurti">
-                <p>Cotton Kurti - ₹1000</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(5)">-</button>
-                    <span id="qty-5">0</span>
-                    <button onclick="addToCart(5, 'Cotton Kurti', 1000)">+</button>
+
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/kurtis/kurti5.jpg" alt="Cotton Kurti">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(5, 'Cotton Kurti', 1000)">Add to Cart</button>
+                <p class="product-title">Cotton Kurti</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹1,000</span>
+                    <span class="original-price">₹1,300</span>
+                    <span class="discount-tag">23% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #fceee3;"></span>
+                    <span class="color-swatch" style="background-color: #d9c8c2;"></span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="cart">
-        <h2>Shopping Cart</h2>
-        <div id="cart-items"></div>
-        <p>Total: ₹<span id="cart-total">0</span></p>
-        <button onclick="checkout()">Checkout</button>
-    </section>
-
     <div id="footer-container"></div>
-    <script src="script.js"></script>
-    <script src="navbar.js"></script>
-    <script src="footer.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="script.js"></script>
+   <script src="footer.js"></script>
+   <script src="navbar.js"></script>
 </body>
 </html>

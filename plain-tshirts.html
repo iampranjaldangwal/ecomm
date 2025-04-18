@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Printed T-Shirts - Trendy Wear</title>
+    <title>Plain T-Shirts - Trendy Wear</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -17,64 +17,118 @@
     <section id="products">
         <h2>Men's Plain T-Shirts</h2>
         <div class="product-container">
-            <div class="product" data-id="1" data-name="Graphic Print Tee" data-price="700">
-                <img src="images/plainTee/plainTee1.jpg" alt="Graphic Print Tee">
-                <p>Graphic Print Tee - ₹700</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(1)">-</button>
-                    <span id="qty-1">0</span>
-                    <button onclick="addToCart(1, 'Graphic Print Tee', 700)">+</button>
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/plainTee/plainTee1.jpg" alt="Graphic Print Tee">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(1, 'Graphic Print Tee', 700)">Add to Cart</button>
-            </div>
-            <div class="product" data-id="2" data-name="Floral Printed Tee" data-price="750">
-                <img src="images/plainTee/plainTee2.jpg" alt="Floral Printed Tee">
-                <p>Floral Printed Tee - ₹750</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(2)">-</button>
-                    <span id="qty-2">0</span>
-                    <button onclick="addToCart(2, 'Floral Printed Tee', 750)">+</button>
+                <p class="product-title">Graphic Print Tee</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹700</span>
+                    <span class="original-price">₹1,200</span>
+                    <span class="discount-tag">40% OFF</span>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(2, 'Floral Printed Tee', 750)">Add to Cart</button>
-            </div>
-            <div class="product" data-id="3" data-name="Cartoon Printed Tee" data-price="800">
-                <img src="images/plainTee/plainTee3.jpg" alt="Cartoon Printed Tee">
-                <p>Cartoon Printed Tee - ₹800</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(3)">-</button>
-                    <span id="qty-3">0</span>
-                    <button onclick="addToCart(3, 'Cartoon Printed Tee', 800)">+</button>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #333;"></span>
+                    <span class="color-swatch" style="background-color: #bbb;"></span>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(3, 'Cartoon Printed Tee', 800)">Add to Cart</button>
-            </div>
-            <div class="product" data-id="4" data-name="Floral Printed Tee" data-price="750">
-                <img src="images/plainTee/plain4.jpg" alt="Floral Printed Tee">
-                <p>Floral Printed Tee - ₹750</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(2)">-</button>
-                    <span id="qty-2">0</span>
-                    <button onclick="addToCart(2, 'Floral Printed Tee', 750)">+</button>
-                </div>
-                <button class="add-cart-btn" onclick="addToCart(2, 'Floral Printed Tee', 750)">Add to Cart</button>
             </div>
 
-            <div class="product" data-id="5" data-name="Floral Printed Tee" data-price="750">
-                <img src="images/plainTee/plain5.jpg" alt="Floral Printed Tee">
-                <p>Floral Printed Tee - ₹750</p>
-                <div class="qty-buttons">
-                    <button onclick="removeFromCart(2)">-</button>
-                    <span id="qty-2">0</span>
-                    <button onclick="addToCart(2, 'Floral Printed Tee', 750)">+</button>
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/plainTee/plainTee2.jpg" alt="Floral Printed Tee">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
                 </div>
-                <button class="add-cart-btn" onclick="addToCart(2, 'Floral Printed Tee', 750)">Add to Cart</button>
+                <p class="product-title">Floral Printed Tee</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹750</span>
+                    <span class="original-price">₹999</span>
+                    <span class="discount-tag">25% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #9b8b79;"></span>
+                    <span class="color-swatch" style="background-color: #fff3e0;"></span>
+                </div>
             </div>
+
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/plainTee/plainTee3.jpg" alt="Floral Printed Tee">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
+                </div>
+                <p class="product-title">Floral Printed Tee</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹750</span>
+                    <span class="original-price">₹999</span>
+                    <span class="discount-tag">25% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #9b8b79;"></span>
+                    <span class="color-swatch" style="background-color: #fff3e0;"></span>
+                </div>
+            </div>
+
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/plainTee/plain4.jpg" alt="Floral Printed Tee">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
+                </div>
+                <p class="product-title">Floral Printed Tee</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹750</span>
+                    <span class="original-price">₹999</span>
+                    <span class="discount-tag">25% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #9b8b79;"></span>
+                    <span class="color-swatch" style="background-color: #fff3e0;"></span>
+                </div>
+            </div>
+
+            <div class="mufti-product">
+                <div class="product-image">
+                    <img src="images/plainTee/plain5.jpg" alt="Floral Printed Tee">
+                    <div class="hover-icons">
+                        <i class="far fa-heart" aria-label="Add to Wishlist"></i>
+                        <i class="fas fa-shopping-bag" aria-label="Add to Cart"></i>
+                    </div>
+                </div>
+                <p class="product-title">Floral Printed Tee</p>
+                <div class="price-section">
+                    <span class="discounted-price">₹750</span>
+                    <span class="original-price">₹999</span>
+                    <span class="discount-tag">25% OFF</span>
+                </div>
+                <div class="color-swatches">
+                    <span class="color-swatch" style="background-color: #9b8b79;"></span>
+                    <span class="color-swatch" style="background-color: #fff3e0;"></span>
+                </div>
+            </div>
+
+            <!-- Add more products with the same structure -->
         </div>
     </section>
 
     <div id="footer-container"></div>
+    <div id="footer-container"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-    <script src="navbar.js"></script>
     <script src="footer.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>
+
 

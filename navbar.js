@@ -38,19 +38,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 const searchIcon = document.querySelector(".search-icon");
                 const searchInput = document.querySelector(".search-bar");
               
-                // Open input on search icon click
-                searchIcon.addEventListener("click", function (e) {
-                  e.stopPropagation(); // Prevent from triggering document click
-                  searchWrapper.classList.add("active");
-                  searchInput.focus();
-                });
-              
-                
-                // Close input on clicking anywhere else
-                document.addEventListener("click", function () {
-                  searchWrapper.classList.remove("active");
-                  searchInput.value = "";
-                });
+           // Open input on search icon click
+searchIcon.addEventListener("click", function (e) {
+  e.stopPropagation(); // Prevent this click from bubbling up
+  searchWrapper.classList.add("active");
+  searchInput.focus();
+});
+
+// Stop click inside the wrapper from closing it
+searchWrapper.addEventListener("click", function (e) {
+  e.stopPropagation();
+});
+
+// Close input on clicking outside
+document.addEventListener("click", function () {
+  searchWrapper.classList.remove("active");
+  searchInput.value = "";
+});
+
 
 
                 //form
