@@ -80,6 +80,38 @@ $('.carousel').carousel({
     interval: 5000, // Slide transition interval in milliseconds
 });
 
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+function toggleWishlist(id) {
+  const index = wishlist.indexOf(id);
+  if (index > -1) {
+    wishlist.splice(index, 1); // remove from wishlist
+  } else {
+    wishlist.push(id); // add to wishlist
+  }
+
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  updateWishlistUI();
+}
+
+function updateWishlistUI() {
+  document.querySelectorAll('.wishlist-btn').forEach(btn => {
+    const productId = parseInt(btn.closest('.product').dataset.id);
+    if (wishlist.includes(productId)) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+// On page load
+window.onload = function () {
+  renderCartOnPage();
+  updateWishlistUI();
+};
+
+
 
 
 
