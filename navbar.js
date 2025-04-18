@@ -53,62 +53,59 @@ document.addEventListener("DOMContentLoaded", function () {
               });
 
 
-              //form
-                  const requestOtpBtn = document.getElementById('requestOtpBtn');
-                  const verifyOtpBtn = document.getElementById('verifyOtpBtn');
-                
-                  if (requestOtpBtn) {
-                    requestOtpBtn.addEventListener('click', function () {
-                      const mobileNumber = document.getElementById('mobileNumber').value.trim();
-                      if (!/^\d{10}$/.test(mobileNumber)) {
-                        alert("Please enter a valid 10-digit mobile number.");
-                        return;
-                      }
-                
-                      document.getElementById('mobileStep').style.display = 'none';
-                      document.getElementById('otpStep').style.display = 'block';
-                    });
-                  }
-                
-                  if (verifyOtpBtn) {
-                    verifyOtpBtn.addEventListener('click', function () {
-                      const otp = document.getElementById('otp').value.trim();
-                      if (otp !== "123456") {
-                        alert("Invalid OTP.");
-                        return;
-                      }
-                
-                      document.getElementById('otpStep').style.display = 'none';
-                      document.getElementById('detailsStep').style.display = 'block';
-                    });
-                  }
-                
-                  const loginForm = document.querySelector("#loginForm");
-                  if (loginForm) {
-                    loginForm.addEventListener("submit", function (event) {
-                      event.preventDefault();
-                      const fullName = document.getElementById('fullName').value.trim();
-                      const email = document.getElementById('email').value.trim();
-                
-                      if (fullName === "" || !email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
-                        alert("Please fill in valid name and email.");
-                        return;
-                      }
-                
-                      alert("Login successful!");
-                    });
-                  }
-                
-                  // Modal show
-                  $('[data-toggle="modal"]').on('click', function () {
-                    const target = $(this).data("target");
-                    $(target).modal("show");
-                  });
+                //form
                
-                
-          }, 100);
-      })
-      .catch(error => console.error("Error loading navbar:", error));   
+                    const requestOtpBtn = document.getElementById('requestOtpBtn');
+                    const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+                  
+                    if (requestOtpBtn) {
+                      requestOtpBtn.addEventListener('click', function () {
+                        const mobileNumber = document.getElementById('mobileNumber').value.trim();
+                        if (!/^\d{10}$/.test(mobileNumber)) {
+                          alert("Please enter a valid 10-digit mobile number.");
+                          return;
+                        }
+                  
+                        document.getElementById('mobileStep').style.display = 'none';
+                        document.getElementById('otpStep').style.display = 'block';
+                      });
+                    }
+                  
+                    if (verifyOtpBtn) {
+                      verifyOtpBtn.addEventListener('click', function () {
+                        const otp = document.getElementById('otp').value.trim();
+                        if (otp !== "123456") {
+                          alert("Invalid OTP.");
+                          return;
+                        }
+                  
+                        document.getElementById('otpStep').style.display = 'none';
+                        document.getElementById('detailsStep').style.display = 'block';
+                      });
+                    }
+                  
+                    const loginForm = document.querySelector("#loginForm");
+                    if (loginForm) {
+                      loginForm.addEventListener("submit", function (event) {
+                        event.preventDefault();
+                        const fullName = document.getElementById('fullName').value.trim();
+                        const email = document.getElementById('email').value.trim();
+                  
+                        if (fullName === "" || !email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
+                          alert("Please fill in valid name and email.");
+                          return;
+                        }
+                  
+                        alert("Login successful!");
+                      });
+                    }
+                  
+                   
+                 
+                  
+            }, 100);
+        })
+        .catch(error => console.error("Error loading navbar:", error));   
 });
 
 
