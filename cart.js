@@ -1,39 +1,26 @@
-// Load cart items on page load
-window.onload = function () {
-    displayCart();
-  };
-  
-  function displayCart() {
-    const cartItemsContainer = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-  
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartItemsContainer.innerHTML = "";
-    let total = 0;
-  
-    if (cart.length === 0) {
-      cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-      cartTotal.textContent = 0;
-      return;
-    }
-  
-    cart.forEach((item, index) => {
-      const itemDiv = document.createElement("div");
-      itemDiv.className = "cart-item";
-      itemDiv.innerHTML = `
-        <p><strong>${item.name}</strong></p>
-        <p>Price: ₹${item.price}</p>
-        <p>Quantity: ${item.quantity}</p>
-        <p>Subtotal: ₹${item.price * item.quantity}</p>
-        <button onclick="removeItem(${index})">Remove</button>
-        <hr />
-      `;
-      cartItemsContainer.appendChild(itemDiv);
-      total += item.price * item.quantity;
-    });
-  
-    cartTotal.textContent = total;
-  }
+function displayCartItems() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartContainer = document.getElementById("cart-container");
+
+  cartContainer.innerHTML = ""; // clear previous
+
+  cart.forEach((item) => {
+    const itemDiv = document.createElement("div");
+    itemDiv.classList.add("cart-item");
+
+    itemDiv.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" class="cart-img">
+      <p>${item.name}</p>
+      <p>₹${item.price}</p>
+      <p>Qty: ${item.quantity}</p>
+    `;
+
+    cartContainer.appendChild(itemDiv);
+  });
+}
+
+
+
   
   function removeItem(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -74,7 +61,7 @@ function displayCart() {
         itemDiv.classList.add("cart-item");
 
         itemDiv.innerHTML = `
-            <img src="${item.img}" alt="${item.name}" class="cart-item-img" />
+           <img src="${item.imgSrc}" alt="${item.name}" class="cart-item-img">
             <div class="cart-item-details">
                 <h3>${item.name}</h3>
                 <p>Price: ₹${item.price}</p>
