@@ -3,7 +3,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f5f5f5;
-  margin: 0;
+  margin:0;
   padding: 0;
 }
 
@@ -152,6 +152,22 @@ body {
   font-size: 14px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
+
+/* Default: 5 products per row on large screens */
+.mufti-product {
+  flex: 1 1 calc(20% - 2rem);
+  max-width: calc(20% - 2rem);
+}
+
+/* Responsive: 2 products per row on small screens */
+@media (max-width: 768px) {
+  .mufti-product {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
+  }
+}
+
+
 
 
 
