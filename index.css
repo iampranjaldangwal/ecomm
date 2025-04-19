@@ -107,6 +107,10 @@ h3 {
     letter-spacing: 1px;
   }
 
+  #newArrivals{
+    margin-top: 15px !important;
+  }
+
   /* Carousel Wrapper */
 .carousel-wrapper {
     position: relative;
@@ -193,10 +197,69 @@ h3 {
   .carousel-btn.next {
     right: 10px;
   }
+
+  
+/* On tablets and smaller: 2 cards per row */
+@media (max-width: 768px) {
+  .category-card {
+    flex: 0 0 calc(50% - 12px); 
+  }
+}
+
+/* On very small screens , 1 per row */
+@media (max-width: 480px) {
+  .category-card {
+    flex: 0 0 100%; /* 1 card per row */
+  }
+}
+
+  /*promo section*/
+  .promo-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  
+  .promo-box {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 90vh;
+  }
+  
+  .promo-box img {
+    width: 80%;
+    height: 100vh;
+    object-fit: cover;
+    margin-left:80px;
+    display: block;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .promo-section {
+      flex-direction: column;
+    }
+
+    .promo-box img{
+      margin-left:60px;
+    }
+  
+    .promo-box {
+      height: 60vh;
+    }
+  
+  }
+  
+  
   
 
 
 /* Product carousel section */
+#shopyByCategory{
+  margin-top: 20px !important;
+}
+
 #product-carousel {
     padding-bottom: 1.5rem;
     text-align: center;
@@ -242,10 +305,9 @@ h3 {
 }
 
 .swiper-slide img {
-    width: 100%; /* Make sure images take the full width of the slide */
-    height: 425px; /* Fixed height to maintain alignment */
+    width: 100%; 
+    height: 80vh; 
     object-fit: cover;
-    object-position:top;
     display: block;
     border-bottom: 2px solid #eee;
 }
@@ -281,3 +343,8 @@ h3 {
     opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .swiper-slide img{
+    object-position: top;
+  }
+}
