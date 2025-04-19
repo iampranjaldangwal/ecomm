@@ -348,9 +348,28 @@ h3 {
     background-color: #000;
     opacity: 1;
 }
+@media (max-width: 1024px) {
+  .swiper {
+      width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
   .swiper-slide img{
     object-position: top;
+  }
+
+  .swiper {
+    width: 100%;
+}
+}
+
+@media (max-width: 480px) {
+  .swiper {
+      width: 100%;
+  }
+
+  .swiper-slide img {
+      height: 90vh;
   }
 }
