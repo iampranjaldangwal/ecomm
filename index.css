@@ -240,17 +240,23 @@ h3 {
     .promo-section {
       flex-direction: column;
     }
-
-    .promo-box img{
-      margin-left:60px;
-    }
   
     .promo-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 60vh;
+      width: 100%;
     }
   
+    .promo-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin: 0;              
+      display: block;
+    }
   }
-  
   
   
 
