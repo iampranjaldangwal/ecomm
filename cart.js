@@ -163,4 +163,14 @@ function checkout() {
   alert("Proceeding to checkout...");
 }
 
+// Remove leftover size selector overlay when navigating back to this page
+window.addEventListener("pageshow", () => {
+  const existingOverlay = document.querySelector(".size-selector-overlay");
+  if (existingOverlay) {
+    console.log("Removing leftover size overlay on back navigation ✅");
+    existingOverlay.remove();
+  }
+});
+
+
 
