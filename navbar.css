@@ -42,7 +42,7 @@ body {
   }
   
   .logo img {
-    width: 70px !important;
+    width: 60px !important;
     height: auto !important;
     display: block !important; /* prevents inline spacing issues */
   

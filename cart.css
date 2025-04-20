@@ -28,18 +28,21 @@ h2{
   align-items: center;
   gap: 20px;
   padding: 10px;
+  margin: 10px 0;
   border-bottom: 1px solid #ccc;
 }
 
 .cart-item img {
   width: 100px;
   height: 100px;
+  margin-right: 20px;
   object-fit: cover;
   object-position:top;
 }
 
 .cart-item-details {
-  display: flex;
+  
+  flex-grow: 1;
   flex-direction: column;
 }
 
@@ -50,6 +53,8 @@ h2{
 
 .cart-item-details p {
   margin: 5px 0;
+  width: 100%;
+  flex-wrap: nowrap;
 }
 
 .cart-summary {
@@ -72,6 +77,37 @@ h2{
 
 .cart-summary button:hover {
   background-color: #555;
+}
+
+
+.subtotal-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.delete-item {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 30px;
+}
+
+.delete-item:hover {
+  color: #f00; 
+}
+
+.delete-item i {
+  font-size: 20px; 
+}
+
+.delete-item:focus {
+  outline: none;
 }
 
 @media (max-width: 768px) {
