@@ -27,7 +27,7 @@ document.addEventListener("click", (e) => {
                 sizeBtns.forEach((btn) => {
                     btn.addEventListener("click", () => {
                         const selectedSize = btn.textContent;
-                        alert(`Selected size: ${selectedSize}`);
+                        alert(Selected size: ${selectedSize});
                         overlay.remove();
                     });
                 });
@@ -38,5 +38,4 @@ document.addEventListener("click", (e) => {
     }
 });
 
-  
   

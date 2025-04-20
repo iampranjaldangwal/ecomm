@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("cart", JSON.stringify(cart));
 
       // Optional: Alert user
-      alert(`${newItem.name} has been added to your cart.`);
+      alert(${newItem.name} has been added to your cart.);
 
       // Render the updated cart items
       renderCartOnPage();
@@ -74,7 +74,7 @@ function renderCartOnPage() {
 
   // Display cart items if the cart is not empty
   cart.forEach((item) => {
-    const itemHTML = `
+    const itemHTML = 
       <div class="cart-item">
         <img src="${item.imgSrc}" alt="${item.name}" />
         <div class="cart-item-details">
@@ -84,7 +84,7 @@ function renderCartOnPage() {
           <p>Subtotal: ₹${(item.price * item.quantity).toFixed(2)}</p>
         </div>
       </div>
-    `;
+    ;
     cartContainer.innerHTML += itemHTML;
     total += item.price * item.quantity;
   });

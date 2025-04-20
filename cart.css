@@ -74,6 +74,12 @@ h2{
   background-color: #555;
 }
 
+.remove-btn {
+  border: none;
+  cursor: pointer;
+}
+
+
 @media (max-width: 768px) {
   .cart-item {
     flex-direction: column;
