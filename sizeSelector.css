@@ -4,6 +4,7 @@
     left: 25%;
     width: 50%;
     height: 50%;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +14,7 @@
   
   .size-selector {
     z-index:3000;
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffff;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
