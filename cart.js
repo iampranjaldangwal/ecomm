@@ -1,91 +1,102 @@
-function displayCartItems() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartContainer = document.getElementById("cart-container");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("cart.js loaded!");
 
-  cartContainer.innerHTML = ""; // clear previous
+  // Handle cart item click
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("fa-shopping-bag")) {
+      console.log("Bag icon clicked ✅");
 
-  cart.forEach((item) => {
-    const itemDiv = document.createElement("div");
-    itemDiv.classList.add("cart-item");
+      const productContainer = event.target.closest(".mufti-product");
+      if (!productContainer) return;
 
-    itemDiv.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" class="cart-img">
-      <p>${item.name}</p>
-      <p>₹${item.price}</p>
-      <p>Qty: ${item.quantity}</p>
-    `;
+      const name = productContainer.querySelector(".product-title")?.textContent?.trim();
+      const priceElement = productContainer.querySelector(".discounted-price");
+      const imgElement = productContainer.querySelector("img");
 
-    cartContainer.appendChild(itemDiv);
-  });
-}
-
-
-
-  
-  function removeItem(index) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.splice(index, 1); // remove item without popup
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCart(); // reload updated cart
-  }
-  
-  function clearCart() {
-    localStorage.removeItem('cart');
-    displayCart();
-  }
-  
-  function checkout() {
-    alert("Checkout functionality coming soon!");
-  }
-  
-  document.addEventListener("DOMContentLoaded", displayCart);
-
-function displayCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartContainer = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-    cartContainer.innerHTML = "";
-
-    let total = 0;
-
-    if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-        cartTotal.textContent = "0";
+      if (!name || !priceElement || !imgElement) {
+        console.error("Missing product information.");
         return;
+      }
+
+      const price = parseFloat(priceElement.textContent.replace("₹", "").trim());
+      const image = imgElement.getAttribute("src");
+
+      const newItem = {
+        name,
+        price,
+        imgSrc: image,
+        quantity: 1
+      };
+
+      // Retrieve existing cart or initialize a new one
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Check if the item is already in the cart
+      const existingIndex = cart.findIndex(item => item.name === newItem.name);
+      if (existingIndex !== -1) {
+        cart[existingIndex].quantity += 1;
+      } else {
+        cart.push(newItem);
+      }
+
+      // Save updated cart
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // Optional: Alert user
+      alert(`${newItem.name} has been added to your cart.`);
+
+      // Render the updated cart items
+      renderCartOnPage();
     }
+  });
 
-    cart.forEach(item => {
-        total += item.price * item.quantity;
+  // Render cart items on the page
+  renderCartOnPage();
+});
 
-        const itemDiv = document.createElement("div");
-        itemDiv.classList.add("cart-item");
+function renderCartOnPage() {
+  const cartContainer = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
 
-        itemDiv.innerHTML = `
-           <img src="${item.imgSrc}" alt="${item.name}" class="cart-item-img">
-            <div class="cart-item-details">
-                <h3>${item.name}</h3>
-                <p>Price: ₹${item.price}</p>
-                <p>Quantity: ${item.quantity}</p>
-                <p>Subtotal: ₹${item.price * item.quantity}</p>
-            </div>
-        `;
+  if (!cartContainer || !cartTotal) return;
 
-        cartContainer.appendChild(itemDiv);
-    });
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cartContainer.innerHTML = ""; // Clear existing items
 
-    cartTotal.textContent = total;
+  // Check if the cart is empty
+  if (cart.length === 0) {
+    cartContainer.innerHTML = "<p class='empty-cart-message'>Your cart is empty</p>";
+    cartTotal.textContent = "0.00"; // Set total to 0 if the cart is empty
+    return;
+  }
+
+  let total = 0;
+
+  // Display cart items if the cart is not empty
+  cart.forEach((item) => {
+    const itemHTML = `
+      <div class="cart-item">
+        <img src="${item.imgSrc}" alt="${item.name}" />
+        <div class="cart-item-details">
+          <p><strong>${item.name}</strong></p>
+           <p>₹${item.price}</p>
+           <p>Quantity: ${item.quantity}</p>
+          <p>Subtotal: ₹${(item.price * item.quantity).toFixed(2)}</p>
+        </div>
+      </div>
+    `;
+    cartContainer.innerHTML += itemHTML;
+    total += item.price * item.quantity;
+  });
+
+  cartTotal.textContent = total.toFixed(2);
 }
 
 function clearCart() {
-    localStorage.removeItem("cart");
-    displayCart();
+  localStorage.removeItem("cart");
+  renderCartOnPage();
 }
 
 function checkout() {
-    alert("Checkout successful!");
-    clearCart();
+  alert("Proceeding to checkout...");
 }
-
-
-
-

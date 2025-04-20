@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    min-height: 100vh;
+  }
+  .sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #343a40;
+    color: white;
+  }
+  .sidebar a {
+    color: white;
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+  }
+  .sidebar a:hover {
+    background-color: #495057;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  .product-img {
+    object-fit: cover;
+    border-radius: 8px;
+  }
