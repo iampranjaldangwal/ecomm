@@ -1,66 +1,65 @@
 .size-selector-overlay {
-    position: fixed;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    visibility: visible !important;
-  }
-  
-  .size-selector {
-    z-index:3000;
-    background: #ffff;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-    width: 300px; 
-    max-width: 90%; 
-    max-height: 80%; 
-    overflow-y: auto; /* Allow scrolling if the content exceeds the height */
-    color: #333;
-   
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  visibility: visible !important;
+}
+
+.size-selector {
+  z-index:3000;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 300px; 
+  max-width: 90%; 
+  max-height: 80%; 
+  overflow-y: auto; /* Allow scrolling if the content exceeds the height */
+  color: #333;
+  background-color: white; 
 }
 
 .size-option {
-    color: white; /* Ensures the text is visible against the background */
-    background-color: rgb(33, 165, 61); /* Background color */
-    margin: 5px;
-    padding: 10px 20px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    cursor: pointer;
+  color: white; /* Ensures the text is visible against the background */
+  background-color: rgb(33, 165, 61); /* Background color */
+  margin: 5px;
+  padding: 10px 20px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
 }
-  
-  .close-size-selector {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 22px;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  .sizes button {
-    margin: 5px;
-    padding: 10px 20px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    background-color: transparent;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  .size-chart-link {
-    display: block;
-    margin-top: 10px;
-    color: #333;
-    font-size: 14px;
-  }
-  
+
+.close-size-selector {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+.sizes button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #333;
+}
+
+.size-chart-link {
+  display: block;
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+}
