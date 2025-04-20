@@ -1,3 +1,5 @@
+let selectedSize = null;  // Global variable to store selected size
+
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("fa-shopping-bag")) {
         console.log("Bag icon clicked ✅");
@@ -9,12 +11,9 @@ document.addEventListener("click", (e) => {
                 wrapper.innerHTML = html;
                 const overlay = wrapper.firstElementChild;
 
-                console.log(overlay); // Check if overlay is correctly appended
-
                 overlay.classList.add("size-selector-overlay");
                 document.body.appendChild(overlay);
 
-                // Wait until DOM is updated, then add event listeners
                 const closeBtn = overlay.querySelector(".close-size-selector");
                 const sizeBtns = overlay.querySelectorAll(".size-option");
 
@@ -26,7 +25,7 @@ document.addEventListener("click", (e) => {
 
                 sizeBtns.forEach((btn) => {
                     btn.addEventListener("click", () => {
-                        const selectedSize = btn.textContent;
+                        selectedSize = btn.textContent;  // Store selected size
                         alert(`Selected size: ${selectedSize}`);
                         overlay.remove();
                     });
@@ -37,6 +36,3 @@ document.addEventListener("click", (e) => {
             });
     }
 });
-
-  
-  
