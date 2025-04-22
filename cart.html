@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="footer.css" />
   <link rel="stylesheet" href="cart.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
@@ -15,24 +16,53 @@
   </header>
 
   <main class="cart-main">
-    <h2>My Shopping Cart</h2>
-    <div id="cart-items" class="cart-items-container">
-      <!-- Cart items will be dynamically inserted here -->
-    </div>
-    <div class="cart-summary">
-      <p>Total: ₹<span id="cart-total">0</span></p>
-      <button onclick="checkout()">Checkout</button>
-      <button onclick="clearCart()">Clear Cart</button>
-    </div>
+    <h2>Your Shopping Cart</h2>
+  
+    <div class="cart-flex-wrapper">
+      <!-- Cart Items Section -->
+      <div id="cart-items" class="cart-items-container">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+
+      <div class="cart-summary-section">
+        <div class="cart-icons-row">
+          <div class="cart-icon-item">
+            <img src="images/icons/return-box-cycle.svg">
+            <p>Easy Returns</p>
+          </div>
+
+          <div class="cart-icon-item">
+            <img src="images/icons/free-shipping-sales.svg">
+            <p>Free Shipping</p>
+          </div>
+
+          <div class="cart-icon-item">
+           <img src="images/icons/secure-payment.svg">
+            <p>Secure Payment</p>
+          </div>
+          
+        </div>
+          
+  
+        <div class="cart-summary">
+          <h3>Bag Summary</h3>
+          <p><strong>Bag Total:</strong> ₹<span id="cart-total">0</span></p>
+          <p><strong>Product Discount:</strong> ₹0</p>
+          <p><strong>Total Payable:</strong> ₹<span id="total-payable">0</span></p>
+          <button onclick="checkout()">Checkout</button>
+        </div>
+      </div>
   </main>
+  
 
   <footer>
     <div id="footer-container"></div>
   </footer>
-
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="navbar.js"></script>
   <script src="footer.js"></script>
   <script src="cart.js"></script>
-  <script src="addToCart.js"></script>
 </body>
 </html>

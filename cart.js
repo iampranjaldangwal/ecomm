@@ -59,13 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle item deletion (including when icon inside button is clicked)
-if (
-  event.target.classList.contains("delete-item") ||
-  event.target.closest(".delete-item")
-) {
-  deleteCartItem(event);
-}
-
+    if (
+      event.target.classList.contains("delete-item") ||
+      event.target.closest(".delete-item")
+    ) {
+      deleteCartItem(event);
+    }
   });
 
   // Render cart items on the page
@@ -75,6 +74,7 @@ if (
 function renderCartOnPage() {
   const cartContainer = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
+  const totalPayable = document.getElementById("total-payable");
 
   if (!cartContainer || !cartTotal) return;
 
@@ -93,33 +93,32 @@ function renderCartOnPage() {
   // Display cart items if the cart is not empty
   cart.forEach((item, index) => {
     const itemHTML = `
-    <div class="cart-item">
-      <img src="${item.imgSrc}" alt="${item.name}" />
-      <div class="cart-item-details">
-        <p><strong>${item.name}</strong></p>
-        <p>₹${item.price}</p>
-        <p>
-          Quantity: 
-          <button class="decrease-quantity" data-index="${index}">-</button>
-          ${item.quantity}
-          <button class="increase-quantity" data-index="${index}">+</button>
-        </p>
-        <p class="subtotal-container">
-          Subtotal: ₹${(item.price * item.quantity).toFixed(2)}
-          <button class="delete-item" data-index="${index}">
-            <i class="fa fa-trash"></i> <!-- Dustbin icon -->
-          </button>
-        </p>
-      </div>
-    </div>
-  `;
-  
+      <div class="cart-item">
+        <img src="${item.imgSrc}" alt="${item.name}" />
+        <div class="cart-item-details">
+          <p><strong>${item.name}</strong></p>
+          <div class="price-quantity-row">
+          <span class="item-price">₹${item.price}</span>
+         <div class="quantity-controls">
+  <button class="decrease-quantity" data-index="${index}">-</button>
+  <span>${item.quantity}</span>
+  <button class="increase-quantity" data-index="${index}">+</button>
+</div>
+</div>
 
+          <span>Subtotal: ₹${(item.price * item.quantity).toFixed(2)}</span>
+          <button class="delete-item" data-index="${index}">
+            <i class="fa fa-trash"></i> 
+          </button>
+        </div>
+      </div>
+    `;
     cartContainer.innerHTML += itemHTML;
     total += item.price * item.quantity;
   });
 
   cartTotal.textContent = total.toFixed(2);
+  totalPayable.textContent = total.toFixed(2);  // Add logic for discounts if needed
 }
 
 function updateQuantity(event, change) {
@@ -130,7 +129,7 @@ function updateQuantity(event, change) {
     cart[index].quantity += change;
 
     // Prevent quantity from going below 1
-    if (cart[index].quantity <= 0) {
+    if (cart[index].quantity < 1) {
       cart[index].quantity = 1;
     }
 
@@ -153,7 +152,6 @@ function deleteCartItem(event) {
   renderCartOnPage();
 }
 
-
 function clearCart() {
   localStorage.removeItem("cart");
   renderCartOnPage();
@@ -171,6 +169,7 @@ window.addEventListener("pageshow", () => {
     existingOverlay.remove();
   }
 });
+
 
 
 
