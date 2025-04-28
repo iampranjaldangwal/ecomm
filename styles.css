@@ -1,9 +1,9 @@
-/*product styling*/
+/* Product Styling*/
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f5f5;
-  margin:0;
+  background-color: #fff;
+  margin: 0;
   padding: 0;
 }
 
@@ -11,161 +11,215 @@ body {
   text-align: center;
   padding: 2rem 0 1rem;
   font-size: 2rem;
-  color: #333;
+  color: #222;
 }
 
 .product-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0 1rem 3rem;
+  justify-content: center; 
+  padding: 0 2rem 3rem;
+  gap: 1rem;
 }
+
 
 .mufti-product {
-  width: 280px;
+  flex: 1 1 calc(22% - 1.5rem);
+  max-width: calc(22% - 1.5rem);
   background: #fff;
-  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  position: relative;
+  text-align: left;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
 }
 
-.product-image {
-  position: relative;
-  overflow: hidden;
+.mufti-product:hover {
+  transform: translateY(-4px);
 }
 
 .product-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+}
+
+.product-image:hover img {
+  transform: scale(1.1); 
+}
+
+.product-image:hover .quick-view {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05); /* Slight zoom effect on hover */
+}
+
+.quick-view {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8); 
+  color: #fff;
+  bottom:0.5%;
+  left: 0;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500; 
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translate(-50%, -50%); 
+  cursor: pointer;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100% ; 
+  text-align: center; 
+  cursor: pointer;
+}
+
+.product-image:hover .quick-view {
+  opacity: 1;
+  transform: translateY(-10px); /* Subtle lift effect for emphasis */
+}
+
+.product-image:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for hover state */
+}
+
 
 .hover-icons {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
-  opacity: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Icons don't block image hover */
 }
 
 .hover-icons i {
-  background: #fff;
-  color: #222;
+  position: absolute;
+  font-size: 18px;
+  color:black;
   padding: 8px;
-  border-radius: 50%;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  pointer-events: auto; /* Allow clicking icons */
 }
 
-.hover-icons i:hover {
-  transform: scale(1.1);
-  color: black;
+
+.wishlist-btn {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  z-index: 5000;
+}
+
+
+/* Specific positioning */
+.hover-icons .fa-shopping-bag {
+  top: 10px;
+  right: 10px;
+}
+
+.fa-heart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.hover-icons .fa-shopping-bag:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+
+
+
+.product-info {
+  padding: 0.8rem 0 0.5rem;
+}
+
+.product-brand {
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 600;
 }
 
 .product-title {
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.8rem 1rem 0 1rem;
-  color:black;
-}
-
-.price-section {
-  padding: 0.3rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #222;
+  margin: 0.2rem 0;
+  padding-right:5px;
+  font-weight: 500;
+  position: relative;
+}
+
+.product-title span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.product-title > i {
+  font-size: 18px; 
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+
+.price-section {
+  margin-top: 0.4rem;
   font-size: 0.95rem;
+  color: #111;
 }
 
 .discounted-price {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .original-price {
   text-decoration: line-through;
   color: #888;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
 }
 
 .discount-tag {
   color: #d32f2f;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
 }
 
 .color-swatches {
-  padding: 0.6rem 1rem 1rem 1rem;
+  margin-top: 0.5rem;
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .color-swatch {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 1px solid #ccc;
   cursor: pointer;
 }
 
-.product-image {
-  position: relative;
-  overflow: hidden;
-}
-
-.wishlist-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.wishlist-btn i {
-  font-size: 24px;
-  color: #aaa;
-  transition: color 0.3s ease;
-}
-
-.wishlist-btn.active i {
-  color: red;
-}
-
-.product {
-  position: relative; /* ensures wishlist button positions correctly */
-}
-
-.product-image:hover .hover-icons {
-  opacity: 1;
-}
-
-.hover-icons i {
-  background-color: white;
-  padding: 6px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 14px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
-/* Default: 5 products per row on large screens */
-.mufti-product {
-  flex: 1 1 calc(20% - 2rem);
-  max-width: calc(20% - 2rem);
-}
-
-/* Responsive: 2 products per row on small screens */
+/* Responsive: 2 columns for smaller screens */
 @media (max-width: 768px) {
   .mufti-product {
-    flex: 1 1 calc(50% - 2rem);
-    max-width: calc(50% - 2rem);
+    flex: 1 1 calc(48% - 1rem);
+    max-width: calc(48% - 1rem);
   }
 }
+
 
 
 
